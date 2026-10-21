@@ -145,7 +145,7 @@ def render_mobile(items: list[dict[str, str]], theme: str) -> str:
         f'<text x="22" y="578" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="{muted}">GitHub source · scheduled refresh · no model metrics</text>',
         '</svg>',
     ]
-    return "\\n".join(parts) + "\\n"
+    return "\n".join(parts) + "\n"
 
 
 def main() -> None:
