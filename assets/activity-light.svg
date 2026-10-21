@@ -5,25 +5,35 @@
 <rect x="1" y="1" width="898" height="429" rx="14" stroke="#ccd9e0" fill="none"/>
 <text x="32" y="50" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#193044">PUBLIC PROJECT ACTIVITY</text>
 <text x="32" y="76" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#455b6d">NEWEST → OLDEST · Commits on each repository’s default branch</text>
+<g data-repository="nfl_weekly_simulation" data-committed-at="2026-10-19T19:13:09+00:00">
 <rect x="27" y="100" width="846" height="54" rx="8" fill="#ffffff"/>
 <rect x="40" y="118" width="6" height="18" rx="2" fill="#006e72"/>
 <text x="60" y="132" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#193044">NFL / Game Simulation</text>
 <text x="848" y="131" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#455b6d">Oct 19, 2026 · 4c1c377</text>
+</g>
+<g data-repository="fantasy_football_dashboard" data-committed-at="2026-09-08T03:12:49+00:00">
 <rect x="27" y="159" width="846" height="54" rx="8" fill="#ffffff"/>
 <rect x="40" y="177" width="6" height="18" rx="2" fill="#006e72"/>
 <text x="60" y="191" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#193044">RAE / Roster Analytics Engine</text>
 <text x="848" y="190" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#455b6d">Sep 08, 2026 · 359c7d0</text>
+</g>
+<g data-repository="shiny_predictive_football_app" data-committed-at="2026-05-02T04:47:53+00:00">
 <rect x="27" y="218" width="846" height="54" rx="8" fill="#ffffff"/>
 <rect x="40" y="236" width="6" height="18" rx="2" fill="#006e72"/>
 <text x="60" y="250" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#193044">Gridiron DNA Lab</text>
 <text x="848" y="249" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#455b6d">May 02, 2026 · 5b22f4e</text>
+</g>
+<g data-repository="nba_daily_simulation" data-committed-at="2026-04-28T05:54:11+00:00">
 <rect x="27" y="277" width="846" height="54" rx="8" fill="#ffffff"/>
 <rect x="40" y="295" width="6" height="18" rx="2" fill="#006e72"/>
 <text x="60" y="309" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#193044">NBA / Daily Simulation</text>
 <text x="848" y="308" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#455b6d">Apr 28, 2026 · 99fa2c1</text>
+</g>
+<g data-repository="gmat_quant_pwa" data-committed-at="2025-12-19T04:23:56+00:00">
 <rect x="27" y="336" width="846" height="54" rx="8" fill="#ffffff"/>
 <rect x="40" y="354" width="6" height="18" rx="2" fill="#006e72"/>
 <text x="60" y="368" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#193044">GMAT Study PWA</text>
 <text x="848" y="367" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#455b6d">Dec 19, 2025 · f0b4c5c</text>
+</g>
 <text x="30" y="412" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#455b6d">Automated via GitHub Actions; dates reflect source commits, not activity on this profile.</text>
 </svg>
