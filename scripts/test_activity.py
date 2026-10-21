@@ -8,7 +8,7 @@ import unittest
 import xml.etree.ElementTree as ET
 from unittest.mock import patch
 
-from render_activity import get_latest, newest_first, render
+from render_activity import get_latest, newest_first, render, render_mobile
 
 
 def item(slug: str, committed_at: str) -> dict[str, str]:
@@ -47,16 +47,17 @@ class ActivityOrderingTests(unittest.TestCase):
 
     def test_renderer_sorts_even_when_called_unsorted(self) -> None:
         for theme in ("dark", "light"):
-            svg = render(self.unsorted, theme)
-            root = ET.fromstring(svg)
-            ns = "{http://www.w3.org/2000/svg}"
-            groups = [g for g in root.findall(f".//{ns}g") if g.get("data-repository")]
-            self.assertEqual(
-                [g.get("data-repository") for g in groups],
-                ["nfl", "rae", "gridiron", "nba", "gmat"],
-            )
-            self.assertTrue(all(g.get("data-committed-at") for g in groups))
-            self.assertIn("NEWEST → OLDEST", svg)
+            for renderer in (render, render_mobile):
+                svg = renderer(self.unsorted, theme)
+                root = ET.fromstring(svg)
+                ns = "{http://www.w3.org/2000/svg}"
+                groups = [g for g in root.findall(f".//{ns}g") if g.get("data-repository")]
+                self.assertEqual(
+                    [g.get("data-repository") for g in groups],
+                    ["nfl", "rae", "gridiron", "nba", "gmat"],
+                )
+                self.assertTrue(all(g.get("data-committed-at") for g in groups))
+                self.assertIn("NEWEST → OLDEST", svg)
 
     def test_api_preserves_full_timestamp(self) -> None:
         response = {
