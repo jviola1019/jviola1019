@@ -27,6 +27,8 @@ REQUIRED = {
     "assets/gridiron-light.svg",
     "assets/activity-dark.svg",
     "assets/activity-light.svg",
+    "assets/activity-mobile-dark.svg",
+    "assets/activity-mobile-light.svg",
 }
 REPOS = (
     "fantasy_football_dashboard",
@@ -100,31 +102,33 @@ def main() -> int:
     # that both modes represent exactly the same public GitHub commits.
     activity_rows = {}
     ns = "{http://www.w3.org/2000/svg}"
-    for theme in ("dark", "light"):
-        path = ROOT / "assets" / f"activity-{theme}.svg"
-        if not path.is_file():
-            continue
-        try:
-            svg_root = ET.parse(path).getroot()
-            groups = [
-                g for g in svg_root.findall(f".//{ns}g")
-                if g.get("data-repository") is not None
-            ]
-            rows = [
-                (g.attrib["data-repository"], dt.datetime.fromisoformat(g.attrib["data-committed-at"].replace("Z", "+00:00")))
-                for g in groups
-            ]
-            if len(rows) != len(REPOS):
-                errors.append(f"Activity {theme} shows {len(rows)} rather than {len(REPOS)} tracked projects")
-            if [date.timestamp() for _, date in rows] != sorted([date.timestamp() for _, date in rows], reverse=True):
-                errors.append(f"Activity {theme} is not ordered newest to oldest")
-            if {name for name, _ in rows} != set(REPOS):
-                errors.append(f"Activity {theme} has unexpected or missing repositories")
-            activity_rows[theme] = rows
-        except (ValueError, KeyError, ET.ParseError) as error:
-            errors.append(f"Invalid activity timestamps in {theme} asset: {error}")
-    if activity_rows.get("dark") != activity_rows.get("light"):
-        errors.append("Dark and light activity views have different commit ordering or timestamps")
+    for variant in ("", "mobile-"):
+        for theme in ("dark", "light"):
+            name = f"{variant}{theme}"
+            path = ROOT / "assets" / f"activity-{name}.svg"
+            if not path.is_file():
+                continue
+            try:
+                svg_root = ET.parse(path).getroot()
+                groups = [
+                    g for g in svg_root.findall(f".//{ns}g")
+                    if g.get("data-repository") is not None
+                ]
+                rows = [
+                    (g.attrib["data-repository"], dt.datetime.fromisoformat(g.attrib["data-committed-at"].replace("Z", "+00:00")))
+                    for g in groups
+                ]
+                if len(rows) != len(REPOS):
+                    errors.append(f"Activity {name} shows {len(rows)} rather than {len(REPOS)} tracked projects")
+                if [date.timestamp() for _, date in rows] != sorted([date.timestamp() for _, date in rows], reverse=True):
+                    errors.append(f"Activity {name} is not ordered newest to oldest")
+                if {name for name, _ in rows} != set(REPOS):
+                    errors.append(f"Activity {variant}{theme} has unexpected or missing repositories")
+                activity_rows[name] = rows
+            except (ValueError, KeyError, ET.ParseError) as error:
+                errors.append(f"Invalid activity timestamps in {name} asset: {error}")
+    if len(activity_rows) == 4 and any(rows != activity_rows["dark"] for rows in activity_rows.values()):
+        errors.append("Desktop/mobile, dark/light activity views disagree on commit order or timestamps")
 
     for repo in REPOS:
         if f"https://github.com/jviola1019/{repo}" not in body:
@@ -135,7 +139,7 @@ def main() -> int:
     for anchor in ("#selected-work", "#research-notes", "#project-pulse"):
         if anchor not in body:
             errors.append(f"Missing page navigation anchor {anchor}")
-    for name in ("profile", "nfl", "nba", "gridiron", "activity"):
+    for name in ("profile", "nfl", "nba", "gridiron", "activity", "activity-mobile"):
         if f"{name}-dark.svg" not in body or f"{name}-light.svg" not in body:
             errors.append(f"Missing dark/light variant for {name}")
     if errors:
