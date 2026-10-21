@@ -1,0 +1,29 @@
+name: Validate profile README
+
+on:
+  push:
+    paths:
+      - README.md
+      - "assets/**"
+      - "scripts/**"
+      - ".github/workflows/readme-check.yml"
+  pull_request:
+    paths:
+      - README.md
+      - "assets/**"
+      - "scripts/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check source markup and visual assets
+        run: |
+          python3 scripts/check_profile.py
+          python3 -m py_compile scripts/render_activity.py scripts/check_profile.py
