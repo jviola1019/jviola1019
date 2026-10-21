@@ -26,4 +26,5 @@ jobs:
       - name: Check source markup and visual assets
         run: |
           python3 scripts/check_profile.py
-          python3 -m py_compile scripts/render_activity.py scripts/check_profile.py
+          python3 -m py_compile scripts/render_activity.py scripts/check_profile.py scripts/test_activity.py
+          python3 -m unittest discover -s scripts -p 'test_*.py' -v
