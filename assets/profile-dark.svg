@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 328" width="1200" height="328" role="img" aria-labelledby="title desc">
+<title id="title">Joe Viola — Analytics, research, and data products</title>
+<desc id="desc">A typography-led banner with a geometric research signal on the right.</desc>
+<defs>
+<linearGradient id="base" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#090F1F"/><stop offset="1" stop-color="#111D32"/></linearGradient>
+<linearGradient id="signal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#40BFB4"/><stop offset="1" stop-color="#68E5D1"/></linearGradient>
+<pattern id="mesh" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0 H0 V36" stroke="#23455E" stroke-width="1" fill="none" opacity="0.38"/></pattern>
+<clipPath id="clip"><rect width="1200" height="328" rx="18"/></clipPath>
+</defs>
+<g clip-path="url(#clip)">
+<rect width="1200" height="328" fill="url(#base)"/>
+<rect x="715" width="485" height="328" fill="url(#mesh)" opacity="0.62"/>
+<path d="M0 0 H1200 M0 327 H1200" stroke="#315269" opacity="0.65"/>
+<rect x="48" y="38" width="8" height="8" rx="2" fill="#68E5D1"/>
+<text x="69" y="47" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="3.1" fill="#B8C9DA">RESEARCH / BUILD / VERIFY</text>
+<text x="48" y="146" font-family="Arial, Helvetica, sans-serif" font-size="84" font-weight="700" letter-spacing="-3.4" fill="#F7FBFF">JOE VIOLA</text>
+<rect x="48" y="173" width="53" height="4" rx="2" fill="#68E5D1"/>
+<text x="48" y="212" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#B8C9DA" font-weight="500">Analytics, simulation &amp; data products.</text>
+<rect x="48" y="251" width="382" height="40" rx="9" fill="#182B3E" stroke="#315269" stroke-width="1"/>
+<text x="66" y="277" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="1.3" fill="#F7FBFF" font-weight="700">MODEL   →   TEST   →   EXPLAIN</text>
+<g opacity="0.72"><path d="M728 120 H1151 M728 190 H1151 M728 260 H1151" stroke="#30465C" stroke-width="1" stroke-dasharray="5 10"/><path d="M780 48 V303 M870 48 V303 M960 48 V303 M1050 48 V303 M1140 48 V303" stroke="#30465C" stroke-width="1" stroke-dasharray="4 10"/></g>
+<path d="M734 206 L792 172 L842 224 L894 137 L939 188 L992 128 L1031 194 L1085 150 L1153 175" stroke="#68E5D1" opacity="0.15" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M734 206 L792 172 L842 224 L894 137 L939 188 L992 128 L1031 194 L1085 150 L1153 175" stroke="url(#signal)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="#111D32" stroke="#68E5D1" stroke-width="3"><circle cx="792" cy="172" r="5"/><circle cx="894" cy="137" r="5"/><circle cx="992" cy="128" r="6"/><circle cx="1085" cy="150" r="6"/></g>
+<path d="M708 318 L740 318 M1172 22 L1172 54" stroke="#68E5D1" stroke-width="3" opacity="0.8"/>
+</g>
+</svg>
