@@ -184,12 +184,14 @@ These are **live CI workflow badges**, not badges claiming model accuracy. A fai
 
 ## Project pulse
 
-The graphic below shows the latest observed commits in five public repositories. The profile repository's [refresh workflow](https://github.com/jviola1019/jviola1019/actions/workflows/profile-activity.yml) is configured to check for updates twice weekly and on manual request, then update this SVG only when the source commits change.
+The graphic below lists five public repositories by their latest commit timestamps, **newest first**. The profile repository's [refresh workflow](https://github.com/jviola1019/jviola1019/actions/workflows/profile-activity.yml) is configured to check for updates twice weekly and on manual request, then update this SVG only when the source commits change.
 
 <picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/activity-mobile-dark.svg">
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/activity-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/activity-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/activity-light.svg">
-  <img src="./assets/activity-light.svg" alt="Latest commit date and abbreviated commit identifier for five public research and product projects. No accuracy or profitability statistics." width="100%">
+  <img src="./assets/activity-light.svg" alt="Five public projects, newest commit first, with actual commit dates and short hashes. Visual adapts to phone screens and light or dark GitHub themes." width="100%">
 </picture>
 
 <sub>Built from public GitHub commit metadata. The graphic is a source-activity summary, not a productivity ranking or proof of model quality. [Review the update script ↗](./scripts/render_activity.py)</sub>
