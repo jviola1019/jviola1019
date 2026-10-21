@@ -95,10 +95,12 @@ def render(items: list[dict[str, str]], theme: str) -> str:
         date = html.escape(item["date"], quote=True)
         sha = html.escape(item["sha"], quote=True)
         parts += [
+            f'<g data-repository="{html.escape(item["slug"], quote=True)}" data-committed-at="{html.escape(item["committed_at"], quote=True)}">',
             f'<rect x="27" y="{y}" width="846" height="54" rx="8" fill="{panel}"/>',
             f'<rect x="40" y="{y + 18}" width="6" height="18" rx="2" fill="{accent}"/>',
             f'<text x="60" y="{y + 32}" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="{text}">{label}</text>',
             f'<text x="848" y="{y + 31}" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="{muted}">{date} · {sha}</text>',
+            '</g>',
         ]
     parts += [
         f'<text x="30" y="412" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="{muted}">Automated via GitHub Actions; dates reflect source commits, not activity on this profile.</text>',
