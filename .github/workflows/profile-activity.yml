@@ -3,7 +3,7 @@ name: Refresh public portfolio activity
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 13 * * 1,4"
+    - cron: "17 13 * * *"
   push:
     paths:
       - "scripts/render_activity.py"
