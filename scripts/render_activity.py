@@ -109,14 +109,54 @@ def render(items: list[dict[str, str]], theme: str) -> str:
     return "\n".join(parts) + "\n"
 
 
+def render_mobile(items: list[dict[str, str]], theme: str) -> str:
+    """A phone-readable chart. Identical data and ordering, larger type."""
+    items = newest_first(items)
+    dark = theme == "dark"
+    bg = "#0e1a2b" if dark else "#f7fafc"
+    panel = "#142337" if dark else "#ffffff"
+    text = "#eef6fc" if dark else "#193044"
+    muted = "#bdccda" if dark else "#455b6d"
+    rule = "#395066" if dark else "#ccd9e0"
+    accent = "#78e4d2" if dark else "#006e72"
+    parts = [
+        '<svg xmlns="http://www.w3.org/2000/svg" width="480" height="600" viewBox="0 0 480 600" role="img" aria-labelledby="t d">',
+        '<title id="t">Recent public repository activity, mobile view</title>',
+        '<desc id="d">Five public repositories in reverse chronological order, newest first. The large-type layout is designed for mobile devices.</desc>',
+        f'<rect width="480" height="600" rx="15" fill="{bg}"/>',
+        f'<rect x="1" y="1" width="478" height="598" rx="14" stroke="{rule}" fill="none"/>',
+        f'<text x="24" y="42" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="{text}">PROJECT ACTIVITY</text>',
+        f'<text x="24" y="68" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="{muted}">NEWEST → OLDEST · Default-branch commits</text>',
+    ]
+    for index, item in enumerate(items):
+        y = 88 + index * 93
+        label = html.escape(item["label"], quote=True)
+        date = html.escape(item["date"], quote=True)
+        sha = html.escape(item["sha"], quote=True)
+        parts += [
+            f'<g data-repository="{html.escape(item["slug"], quote=True)}" data-committed-at="{html.escape(item["committed_at"], quote=True)}">',
+            f'<rect x="16" y="{y}" width="448" height="86" rx="9" fill="{panel}"/>',
+            f'<rect x="29" y="{y + 20}" width="5" height="41" rx="2" fill="{accent}"/>',
+            f'<text x="47" y="{y + 34}" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="{text}">{label}</text>',
+            f'<text x="47" y="{y + 63}" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="{muted}">{date} · {sha}</text>',
+            '</g>',
+        ]
+    parts += [
+        f'<text x="22" y="578" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="{muted}">GitHub source · scheduled refresh · no model metrics</text>',
+        '</svg>',
+    ]
+    return "\\n".join(parts) + "\\n"
+
+
 def main() -> None:
     items = newest_first([get_latest(label, slug) for label, slug in REPOSITORIES])
     ASSETS.mkdir(parents=True, exist_ok=True)
     for theme in ("dark", "light"):
-        path = ASSETS / f"activity-{theme}.svg"
-        content = render(items, theme)
-        if not path.exists() or path.read_text(encoding="utf-8") != content:
-            path.write_text(content, encoding="utf-8")
+        for suffix, compact in (("", False), ("mobile-", True)):
+            path = ASSETS / f"activity-{suffix}{theme}.svg"
+            content = render_mobile(items, theme) if compact else render(items, theme)
+            if not path.exists() or path.read_text(encoding="utf-8") != content:
+                path.write_text(content, encoding="utf-8")
     print(json.dumps(items, indent=2))
 
 
