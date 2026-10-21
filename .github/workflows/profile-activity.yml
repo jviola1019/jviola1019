@@ -1,0 +1,41 @@
+name: Refresh public portfolio activity
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 13 * * 1,4"
+  push:
+    paths:
+      - "scripts/render_activity.py"
+      - ".github/workflows/profile-activity.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-activity
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.repository == 'jviola1019/jviola1019'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@v4
+      - name: Render activity from public GitHub commits
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/render_activity.py
+      - name: Commit changed SVG cards
+        run: |
+          if git diff --quiet -- assets/activity-dark.svg assets/activity-light.svg; then
+            echo "No project activity changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/activity-dark.svg assets/activity-light.svg
+          git commit -m "chore: refresh public portfolio activity"
+          git push
