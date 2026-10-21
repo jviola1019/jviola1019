@@ -1,91 +1,124 @@
+<!-- Joe Viola · GitHub profile -->
+
 <div align="center">
 
-<h1>Joe Viola</h1>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile-light.svg">
+  <img src="./assets/profile-light.svg" alt="Joe Viola — analytics, simulation and data products. A geometric data signal illustrates the research process." width="100%">
+</picture>
 
-<p><strong>Business Analytics · Predictive Modeling · Data Products</strong></p>
+**MBA candidate at the University of Mississippi**  
+Business analytics · Predictive modeling · Data products
 
-<p>MBA candidate at the University of Mississippi focused on turning complex data into practical decisions.</p>
-
-<p>I build simulation models, research pipelines, and interactive dashboards—with an emphasis on transparent assumptions, reproducible analysis, and usable results.</p>
-
-<p><a href="#featured-projects"><strong>Explore my projects ↓</strong></a> · <a href="https://github.com/jviola1019?tab=repositories"><strong>View repositories</strong></a></p>
-
-<br>
-
-<img src="https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white" alt="R">
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
-<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js">
-<img src="https://img.shields.io/badge/Shiny-0087B5?style=flat-square&logo=rstudio&logoColor=white" alt="Shiny">
+[**Explore projects ↓**](#selected-work) &nbsp;·&nbsp; [**How I work**](#how-i-work) &nbsp;·&nbsp; [**All repositories ↗**](https://github.com/jviola1019?tab=repositories)
 
 </div>
 
+## A little about me
+
+I'm Joe. I study business at Ole Miss and build tools that make complicated data easier to use. A lot of my work starts with sports questions and ends up involving simulation, statistical modeling, or a dashboard someone can actually explore.
+
+The part I care about most is whether the analysis holds up. A polished chart is useful, but it doesn't mean much if the underlying model hasn't been tested.
+
+**I work with:** `R` · `TypeScript` · `JavaScript` · `Next.js` · `Shiny` · `Monte Carlo simulation` · `Data visualization`
+
 ---
 
-## Featured projects
+## Selected work
 
-### RAE — Roster Analytics Engine
+<sub>01 / FEATURED PRODUCT</sub>
 
-**Interactive fantasy football research and decision-support platform**
+### [RAE — Roster Analytics Engine ↗](https://github.com/jviola1019/fantasy_football_dashboard)
 
-Explore player comparisons, league insights, and probabilistic season outcomes through a multi-view dashboard. The project combines source-aware analytics with simulation and clear reporting of uncertainty.
-
-**Stack:** Next.js · TypeScript · Tailwind CSS · Monte Carlo simulation
+**Fantasy football analytics with an actual product interface.** RAE brings together league information, player comparisons, and season simulation in a dashboard built to help users explore decisions instead of sorting through disconnected spreadsheets.
 
 <a href="https://github.com/jviola1019/fantasy_football_dashboard">
-  <img src="https://raw.githubusercontent.com/jviola1019/fantasy_football_dashboard/main/.github/assets/hero.png" alt="RAE dashboard showing football analytics and insights" width="100%">
+  <img src="https://raw.githubusercontent.com/jviola1019/fantasy_football_dashboard/main/.github/assets/hero.png" alt="RAE dashboard interface with fantasy football league health, rankings, insights, and recommendations" width="100%">
 </a>
 
-[**View project and screenshots →**](https://github.com/jviola1019/fantasy_football_dashboard)
+`Next.js` &nbsp; `TypeScript` &nbsp; `Tailwind CSS` &nbsp; `Simulation`
+
+**A result I'm glad I documented:** an out-of-sample test on 115 real drafts did **not** support the original reputation-arbitrage idea. I changed the project's direction rather than keep presenting an unproven edge. [Read the holdout findings ↗](https://github.com/jviola1019/fantasy_football_dashboard/blob/main/reports/2026-08-20/holdout-result-3.md)
 
 <table>
 <tr>
 <td width="50%" valign="top">
-<h3>NFL Game Prediction Model</h3>
-<p>Research-stage football outcome simulation using statistical score distributions, Monte Carlo methods, and market comparison.</p>
-<p><strong>Stack:</strong> R · Simulation · Model evaluation</p>
-<p><strong>Validation:</strong> Predictive performance is not yet established; see the project's audit and backtesting notes.</p>
-<p><a href="https://github.com/jviola1019/nfl_weekly_simulation">View repository →</a></p>
+
+<sub>02 / PROBABILISTIC MODELING</sub>
+
+### [NFL Game Prediction Model ↗](https://github.com/jviola1019/nfl_weekly_simulation)
+
+A research-stage NFL game simulator using score distributions, Monte Carlo methods, and comparisons with betting markets.
+
+**Built with:** R · Simulation · Model evaluation
+
+**Research status:** Predictive accuracy is not yet validated. [Audit and evidence ↗](https://github.com/jviola1019/nfl_weekly_simulation/blob/main/docs/EVIDENCE_LEDGER.md)
+
 </td>
 <td width="50%" valign="top">
-<h3>NBA Daily Monte Carlo</h3>
-<p>A repeatable basketball research pipeline for team and player simulations, data checks, and daily reporting.</p>
-<p><strong>Stack:</strong> R · Data pipelines · Probabilistic modeling</p>
-<p><a href="https://github.com/jviola1019/nba_daily_simulation">View repository →</a></p>
+
+<sub>03 / ANALYTICS PIPELINE</sub>
+
+### [NBA Daily Monte Carlo ↗](https://github.com/jviola1019/nba_daily_simulation)
+
+An R-based workflow for collecting basketball data, simulating game and player outcomes, and generating daily research reports.
+
+**Built with:** R · Data pipelines · Time-aware evaluation
+
+**Focus:** Repeating the analysis consistently and making data-quality checks visible.
+
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-<h3>Gridiron DNA Lab</h3>
-<p>An interactive NFL and college football analytics application exploring offensive tendencies, field-position patterns, and situational performance.</p>
-<p><strong>Stack:</strong> R · Shiny · Data visualization</p>
-<p><a href="https://github.com/jviola1019/shiny_predictive_football_app">View repository →</a></p>
+
+<sub>04 / INTERACTIVE ANALYTICS</sub>
+
+### [Gridiron DNA Lab ↗](https://github.com/jviola1019/shiny_predictive_football_app)
+
+A Shiny app for comparing NFL and college-football offensive tendencies, field position, and situational efficiency.
+
+**Built with:** R · Shiny · Visualization
+
+**Focus:** Making play-by-play data easier to explore.
+
 </td>
 <td width="50%" valign="top">
-<h3>GMAT Study PWA</h3>
-<p>An offline-capable learning app with structured practice questions, flashcards, worked solutions, and responsive interactions.</p>
-<p><strong>Stack:</strong> JavaScript · Progressive Web App · UX</p>
-<p><a href="https://github.com/jviola1019/gmat_quant_pwa">View repository →</a></p>
+
+<sub>05 / PRODUCT & UX</sub>
+
+### [GMAT Study PWA ↗](https://github.com/jviola1019/gmat_quant_pwa)
+
+An offline-friendly study app with guided questions, flashcards, and worked solutions.
+
+**Built with:** JavaScript · Progressive Web App
+
+**Focus:** Turning a study workflow into something usable on a phone or laptop.
+
 </td>
 </tr>
 </table>
 
 ---
 
-## How I approach analytics
+## How I work
 
-- **Start with the question.** Define the decision a model or dashboard is supposed to improve.
-- **Show the evidence.** Document data sources, assumptions, uncertainty, and limitations.
-- **Test the claims.** Use held-out evaluation and reproducible checks before claiming predictive performance.
-- **Make the output usable.** Turn analyses into interfaces and reports people can actually work with.
+**Start with a question.** What decision should the work help someone make?
 
-## Areas of interest
+**Build a baseline.** A complicated model has to earn its complexity.
 
-Business analytics · Forecasting · Simulation · Statistical modeling · Data visualization · Decision support
+**Test before claiming results.** I look for data issues, out-of-sample failures, and reasons a promising result might be misleading.
+
+**Make it usable.** Good analysis should be understandable to someone other than the person who wrote the code.
+
+<sub>Most of my projects are independent research or works in progress. Check each repository for its current validation status and limitations.</sub>
 
 ---
 
 <div align="center">
 
-<p><strong>Interested in my work?</strong> Start with the <a href="https://github.com/jviola1019/fantasy_football_dashboard">RAE dashboard</a> or <a href="https://github.com/jviola1019?tab=repositories">browse all repositories</a>.</p>
+**Curious about something I built?**  
+Start with [RAE](https://github.com/jviola1019/fantasy_football_dashboard), or [browse my public projects](https://github.com/jviola1019?tab=repositories).
 
 </div>
