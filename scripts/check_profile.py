@@ -7,6 +7,7 @@ review in GitHub's light and dark themes.
 """
 from __future__ import annotations
 
+import datetime as dt
 from html.parser import HTMLParser
 from pathlib import Path
 import re
@@ -95,6 +96,36 @@ def main() -> int:
                 ET.parse(real)
             except ET.ParseError as error:
                 errors.append(f"Invalid SVG XML {path}: {error}")
+    # Verify the saved graphic is chronologically sorted in both themes and
+    # that both modes represent exactly the same public GitHub commits.
+    activity_rows = {}
+    ns = "{http://www.w3.org/2000/svg}"
+    for theme in ("dark", "light"):
+        path = ROOT / "assets" / f"activity-{theme}.svg"
+        if not path.is_file():
+            continue
+        try:
+            svg_root = ET.parse(path).getroot()
+            groups = [
+                g for g in svg_root.findall(f".//{ns}g")
+                if g.get("data-repository") is not None
+            ]
+            rows = [
+                (g.attrib["data-repository"], dt.datetime.fromisoformat(g.attrib["data-committed-at"].replace("Z", "+00:00")))
+                for g in groups
+            ]
+            if len(rows) != len(REPOS):
+                errors.append(f"Activity {theme} shows {len(rows)} rather than {len(REPOS)} tracked projects")
+            if [date.timestamp() for _, date in rows] != sorted([date.timestamp() for _, date in rows], reverse=True):
+                errors.append(f"Activity {theme} is not ordered newest to oldest")
+            if {name for name, _ in rows} != set(REPOS):
+                errors.append(f"Activity {theme} has unexpected or missing repositories")
+            activity_rows[theme] = rows
+        except (ValueError, KeyError, ET.ParseError) as error:
+            errors.append(f"Invalid activity timestamps in {theme} asset: {error}")
+    if activity_rows.get("dark") != activity_rows.get("light"):
+        errors.append("Dark and light activity views have different commit ordering or timestamps")
+
     for repo in REPOS:
         if f"https://github.com/jviola1019/{repo}" not in body:
             errors.append(f"Missing canonical repository link: {repo}")
