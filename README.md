@@ -184,7 +184,7 @@ These are **live CI workflow badges**, not badges claiming model accuracy. A fai
 
 ## Project pulse
 
-The graphic below lists five public repositories by their latest commit timestamps, **newest first**. The profile repository's [refresh workflow](https://github.com/jviola1019/jviola1019/actions/workflows/profile-activity.yml) is configured to check for updates twice weekly and on manual request, then update this SVG only when the source commits change.
+The graphic below lists five public repositories by their latest commit timestamps, **newest first**. The profile repository's [refresh workflow](https://github.com/jviola1019/jviola1019/actions/workflows/profile-activity.yml) is configured to check for updates daily and on manual request, then update this SVG only when the source commits change.
 
 <picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/activity-mobile-dark.svg">
