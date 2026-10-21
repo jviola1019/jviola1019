@@ -194,6 +194,11 @@ The graphic below shows the latest observed commits in five public repositories.
 
 <sub>Built from public GitHub commit metadata. The graphic is a source-activity summary, not a productivity ranking or proof of model quality. [Review the update script ↗](./scripts/render_activity.py)</sub>
 
+<p>
+  <a href="https://github.com/jviola1019/jviola1019/actions/workflows/readme-check.yml"><img alt="Profile README validation workflow status" src="https://github.com/jviola1019/jviola1019/actions/workflows/readme-check.yml/badge.svg"></a>
+  <a href="https://github.com/jviola1019/jviola1019/actions/workflows/profile-activity.yml"><img alt="Portfolio activity refresh workflow status" src="https://github.com/jviola1019/jviola1019/actions/workflows/profile-activity.yml/badge.svg"></a>
+</p>
+
 ---
 
 <div align="center">
