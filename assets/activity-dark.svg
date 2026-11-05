@@ -5,11 +5,11 @@
 <rect x="1" y="1" width="898" height="429" rx="14" stroke="#395066" fill="none"/>
 <text x="32" y="50" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#eef6fc">PUBLIC PROJECT ACTIVITY</text>
 <text x="32" y="76" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#bdccda">NEWEST → OLDEST · Commits on each repository’s default branch</text>
-<g data-repository="nfl_weekly_simulation" data-committed-at="2026-10-19T19:13:09+00:00">
+<g data-repository="nfl_weekly_simulation" data-committed-at="2026-11-05T20:30:14+00:00">
 <rect x="27" y="100" width="846" height="54" rx="8" fill="#142337"/>
 <rect x="40" y="118" width="6" height="18" rx="2" fill="#78e4d2"/>
 <text x="60" y="132" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#eef6fc">NFL / Game Simulation</text>
-<text x="848" y="131" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#bdccda">Oct 19, 2026 · 4c1c377</text>
+<text x="848" y="131" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#bdccda">Nov 05, 2026 · 85fd35a</text>
 </g>
 <g data-repository="fantasy_football_dashboard" data-committed-at="2026-09-08T03:12:49+00:00">
 <rect x="27" y="159" width="846" height="54" rx="8" fill="#142337"/>
