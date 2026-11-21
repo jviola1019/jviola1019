@@ -1,4 +1,4 @@
-name: Refresh public portfolio activity
+name: Refresh selected public portfolio activity
 
 on:
   workflow_dispatch:
@@ -6,6 +6,7 @@ on:
     - cron: "17 13 * * *"
   push:
     paths:
+      - "data/projects.json"
       - "scripts/render_activity.py"
       - ".github/workflows/profile-activity.yml"
 
@@ -20,23 +21,26 @@ jobs:
   refresh:
     if: github.repository == 'jviola1019/jviola1019'
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 6
     steps:
       - name: Checkout profile repository
         uses: actions/checkout@v4
-      - name: Render activity from public GitHub commits
+      - name: Render from selected public default-branch commits
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/render_activity.py
-      - name: Commit changed SVG cards
+      - name: Check assets and activity consistency
         run: |
-          # Stage first, so newly generated mobile assets are included.
+          python3 scripts/check_profile.py
+          python3 -m unittest discover -s scripts -p 'test_*.py' -v
+      - name: Commit source-driven changes only
+        run: |
           git add assets/activity-dark.svg assets/activity-light.svg assets/activity-mobile-dark.svg assets/activity-mobile-light.svg
           if git diff --cached --quiet; then
-            echo "No project activity changes."
+            echo "No source project changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: refresh public portfolio activity"
+          git commit -m "chore: refresh selected public project activity"
           git push

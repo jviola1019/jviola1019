@@ -5,12 +5,16 @@ on:
     paths:
       - README.md
       - "assets/**"
+      - "data/**"
+      - "docs/PORTFOLIO_AUDIT.md"
       - "scripts/**"
       - ".github/workflows/readme-check.yml"
   pull_request:
     paths:
       - README.md
       - "assets/**"
+      - "data/**"
+      - "docs/PORTFOLIO_AUDIT.md"
       - "scripts/**"
   workflow_dispatch:
 
@@ -23,7 +27,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Check source markup and visual assets
+      - name: Validate README, privacy, SVGs and activity manifest
         run: |
           python3 scripts/check_profile.py
           python3 -m py_compile scripts/render_activity.py scripts/check_profile.py scripts/test_activity.py

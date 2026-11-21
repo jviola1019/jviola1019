@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
-"""Offline validation for profile README and first-party SVG assets.
-
-Designed to run both locally and in GitHub Actions without dependencies.
-This verifies source integrity; browser-specific layout still requires a visual
-review in GitHub's light and dark themes.
-"""
+"""Offline structural, privacy and provenance checks for the profile portfolio."""
 from __future__ import annotations
 
 import datetime as dt
 from html.parser import HTMLParser
+import json
 from pathlib import Path
 import re
 import sys
@@ -16,141 +12,108 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
-REQUIRED = {
-    "assets/profile-dark.svg",
-    "assets/profile-light.svg",
-    "assets/nfl-dark.svg",
-    "assets/nfl-light.svg",
-    "assets/nba-dark.svg",
-    "assets/nba-light.svg",
-    "assets/gridiron-dark.svg",
-    "assets/gridiron-light.svg",
-    "assets/activity-dark.svg",
-    "assets/activity-light.svg",
-    "assets/activity-mobile-dark.svg",
-    "assets/activity-mobile-light.svg",
-}
-REPOS = (
-    "fantasy_football_dashboard",
-    "nfl_weekly_simulation",
-    "nba_daily_simulation",
-    "shiny_predictive_football_app",
-    "gmat_quant_pwa",
-)
+MANIFEST = ROOT / "data" / "projects.json"
 
 
 class AssetParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
-        self.images: list[dict[str, str]] = []
-        self.sources: list[dict[str, str]] = []
-        self.links: list[str] = []
-        self.details = 0
-        self.pictures = 0
+        self.images = []
+        self.sources = []
 
-    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        d = {key: value or "" for key, value in attrs}
+    def handle_starttag(self, tag, attrs):
+        data = dict(attrs)
         if tag == "img":
-            self.images.append(d)
-        if tag == "source":
-            self.sources.append(d)
-        if tag == "a" and "href" in d:
-            self.links.append(d["href"])
-        if tag == "details":
-            self.details += 1
-        if tag == "picture":
-            self.pictures += 1
+            self.images.append(data)
+        elif tag == "source":
+            self.sources.append(data)
 
 
 def main() -> int:
     errors = []
     body = README.read_text(encoding="utf-8")
+    data = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    projects = data["projects"]
+    if data.get("owner") != "jviola1019":
+        errors.append("Unexpected project manifest owner")
     if len(body.encode("utf-8")) >= 500 * 1024:
-        errors.append("README exceeds GitHub's 500 KiB rendered-readme truncation limit")
-    if "## How I work" in body:
-        errors.append("The obsolete generic 'How I work' block has returned")
-    if any(s in body.lower() for s in ("<iframe", "<script", "javascript:")):
-        errors.append("README includes active HTML/JavaScript unsupported by GitHub")
-    if "<table>" in body:
-        errors.append("Fixed-width HTML table found: use responsive Markdown blocks instead")
-    if body.count("<details>") != body.count("</details>"):
-        errors.append("Unbalanced interactive details blocks")
+        errors.append("README exceeds the 500 KiB limit")
+    for banned in ("<script", "<iframe", "javascript:", "prediction-market-quant", "gmat_quant_pwa"):
+        if banned in body.lower():
+            errors.append(f"Unsafe, private or unavailable reference: {banned}")
     if body.count("<picture>") != body.count("</picture>"):
-        errors.append("Unbalanced theme image blocks")
-
+        errors.append("Unbalanced picture elements")
+    if body.count("<details>") != body.count("</details>"):
+        errors.append("Unbalanced details elements")
     parsed = AssetParser()
     parsed.feed(body)
-    for image in parsed.images:
-        if not image.get("alt", "").strip():
-            errors.append(f"Missing image description for {image.get('src', '')}")
+    if not parsed.images or not parsed.sources:
+        errors.append("Missing accessible images or dark/light sources")
     relative = set()
+    for image in parsed.images:
+        if not (image.get("alt") or "").strip():
+            errors.append("Missing descriptive alt on an image")
     for source in parsed.images + parsed.sources:
         for attr in ("src", "srcset"):
-            value = source.get(attr, "").strip()
-            if value.startswith("./"):
-                relative.add(value[2:])
-    for path in sorted(REQUIRED | relative):
-        real = ROOT / path
-        if not real.is_file():
-            errors.append(f"Missing relative asset: {path}")
-        elif real.suffix == ".svg":
-            try:
-                ET.parse(real)
-            except ET.ParseError as error:
-                errors.append(f"Invalid SVG XML {path}: {error}")
-    # Verify the saved graphic is chronologically sorted in both themes and
-    # that both modes represent exactly the same public GitHub commits.
-    activity_rows = {}
+            ref = (source.get(attr) or "").strip()
+            if ref.startswith("./"):
+                relative.add(ref[2:])
+    for path in sorted(relative):
+        item = ROOT / path
+        if not item.is_file():
+            errors.append(f"Missing local visual asset: {path}")
+    for svg in (ROOT / "assets").glob("*.svg"):
+        try:
+            ET.parse(svg)
+        except ET.ParseError as err:
+            errors.append(f"Invalid SVG: {svg.name}: {err}")
+    if len({p["slug"] for p in projects}) != len(projects):
+        errors.append("Duplicate project slug in manifest")
+    for project in projects:
+        if not re.fullmatch(r"[A-Za-z0-9_.-]+", project["slug"]):
+            errors.append("Invalid repository slug in public manifest")
+        url = f"https://github.com/jviola1019/{project['slug']}"
+        if url not in body:
+            errors.append(f"Missing repository link: {project['slug']}")
+    limit = data["activity_limit"]
+    tracked = {p["slug"] for p in projects if p.get("activity")}
+    if not isinstance(limit, int) or not 1 <= limit <= len(tracked):
+        errors.append("Invalid activity limit")
+    seen = {}
     ns = "{http://www.w3.org/2000/svg}"
-    for variant in ("", "mobile-"):
-        for theme in ("dark", "light"):
-            name = f"{variant}{theme}"
-            path = ROOT / "assets" / f"activity-{name}.svg"
-            if not path.is_file():
-                continue
-            try:
-                svg_root = ET.parse(path).getroot()
-                groups = [
-                    g for g in svg_root.findall(f".//{ns}g")
-                    if g.get("data-repository") is not None
-                ]
-                rows = [
-                    (g.attrib["data-repository"], dt.datetime.fromisoformat(g.attrib["data-committed-at"].replace("Z", "+00:00")))
-                    for g in groups
-                ]
-                if len(rows) != len(REPOS):
-                    errors.append(f"Activity {name} shows {len(rows)} rather than {len(REPOS)} tracked projects")
-                if [date.timestamp() for _, date in rows] != sorted([date.timestamp() for _, date in rows], reverse=True):
-                    errors.append(f"Activity {name} is not ordered newest to oldest")
-                if {name for name, _ in rows} != set(REPOS):
-                    errors.append(f"Activity {variant}{theme} has unexpected or missing repositories")
-                activity_rows[name] = rows
-            except (ValueError, KeyError, ET.ParseError) as error:
-                errors.append(f"Invalid activity timestamps in {name} asset: {error}")
-    if len(activity_rows) == 4 and any(rows != activity_rows["dark"] for rows in activity_rows.values()):
-        errors.append("Desktop/mobile, dark/light activity views disagree on commit order or timestamps")
-
-    for repo in REPOS:
-        if f"https://github.com/jviola1019/{repo}" not in body:
-            errors.append(f"Missing canonical repository link: {repo}")
-    for heading in ("## Selected work", "## Research notes", "## Project pulse"):
-        if heading not in body:
-            errors.append(f"Missing primary section {heading}")
-    for anchor in ("#selected-work", "#research-notes", "#project-pulse"):
+    for suffix in ("dark", "light", "mobile-dark", "mobile-light"):
+        path = ROOT / "assets" / f"activity-{suffix}.svg"
+        if not path.is_file():
+            errors.append(f"Missing activity asset: {path.name}")
+            continue
+        try:
+            root = ET.parse(path).getroot()
+            rows = [(g.attrib["data-repository"], dt.datetime.fromisoformat(g.attrib["data-committed-at"].replace("Z", "+00:00")))
+                    for g in root.findall(f".//{ns}g") if g.get("data-repository") is not None]
+            if len(rows) != limit:
+                errors.append(f"{suffix}: {len(rows)} rows, expected {limit}")
+            if not {r for r, _ in rows}.issubset(tracked):
+                errors.append(f"{suffix}: unapproved project included")
+            if len({r for r, _ in rows}) != len(rows):
+                errors.append(f"{suffix}: duplicate project")
+            times = [date.timestamp() for _, date in rows]
+            if times != sorted(times, reverse=True):
+                errors.append(f"{suffix}: commit order incorrect")
+            seen[suffix] = rows
+        except (ET.ParseError, ValueError, KeyError) as err:
+            errors.append(f"{suffix}: cannot validate activity asset: {err}")
+    if len(seen) == 4 and any(rows != seen["dark"] for rows in seen.values()):
+        errors.append("Activity variants disagree about latest commits")
+    for anchor in ("#selected-work", "#research-standard", "#project-activity"):
         if anchor not in body:
-            errors.append(f"Missing page navigation anchor {anchor}")
-    for name in ("profile", "nfl", "nba", "gridiron", "activity", "activity-mobile"):
-        if f"{name}-dark.svg" not in body or f"{name}-light.svg" not in body:
-            errors.append(f"Missing dark/light variant for {name}")
+            errors.append(f"Missing navigation anchor {anchor}")
+    if not (ROOT / "docs" / "PORTFOLIO_AUDIT.md").is_file():
+        errors.append("Missing provenance audit")
     if errors:
-        print("\n".join(f"FAIL: {item}" for item in errors), file=sys.stderr)
+        for msg in errors:
+            print(f"FAIL: {msg}", file=sys.stderr)
         return 1
-    print(
-        f"PASS: README {len(body.encode('utf-8'))} bytes, "
-        f"{len(parsed.images)} described images, {parsed.pictures} themed visuals, "
-        f"{parsed.details} native expandable sections, "
-        f"{len(relative)} referenced local assets, {len(REPOS)} featured repos."
-    )
+    print(f"PASS: {len(projects)} public project records, {len(parsed.images)} described images, {len(relative)} local assets, {limit} activity rows, 4 synchronized SVG views")
     return 0
 
 

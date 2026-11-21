@@ -1,39 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="431" viewBox="0 0 900 431" role="img" aria-labelledby="t d">
-<title id="t">Recent public repository activity</title>
-<desc id="d">Five public repositories sorted by latest commit timestamp, newest to oldest. Refreshed by GitHub Actions.</desc>
-<rect width="900" height="431" rx="15" fill="#0e1a2b"/>
-<rect x="1" y="1" width="898" height="429" rx="14" stroke="#395066" fill="none"/>
-<text x="32" y="50" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#eef6fc">PUBLIC PROJECT ACTIVITY</text>
-<text x="32" y="76" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#bdccda">NEWEST → OLDEST · Commits on each repository’s default branch</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="503" viewBox="0 0 1200 503" role="img" aria-labelledby="t d">
+<title id="t">Selected public project activity</title>
+<desc id="d">6 curated public projects ordered by newest default-branch commit. Dates and hashes are source metadata; no model-performance claim.</desc>
+<rect width="1200" height="503" rx="7" fill="#0D151C"/>
+<rect x="14" y="14" width="1172" height="475" rx="4" stroke="#35444B" fill="none"/>
+<rect x="32" y="39" width="7" height="7" fill="#E8B576"/>
+<text x="50" y="49" font-family="IBM Plex Mono,Consolas,monospace" font-size="18" letter-spacing="1.1" font-weight="600" fill="#F2F4F1">SELECTED PROJECT ACTIVITY</text>
+<text x="32" y="76" font-family="IBM Plex Mono,Consolas,monospace" font-size="13" fill="#B6C2C5">LATEST DEFAULT-BRANCH COMMITS / NEWEST FIRST</text>
+<g data-repository="hypothetical_cfb" data-committed-at="2026-11-21T08:26:34+00:00">
+<rect x="32" y="105" width="1136" height="50" rx="4" fill="#18262E" stroke="#35444B" stroke-width=".8"/>
+<rect x="43" y="118" width="4" height="24" fill="#E8B576"/>
+<text x="60" y="136" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">Gridiron Lab / CFB</text>
+<text x="1148" y="136" text-anchor="end" font-family="IBM Plex Mono,Consolas,monospace" font-size="16" fill="#B6C2C5">Nov 21, 2026  /  396fb37</text>
+</g>
+<g data-repository="horrible_ceo" data-committed-at="2026-11-20T10:02:43+00:00">
+<rect x="32" y="164" width="1136" height="50" rx="4" fill="#18262E" stroke="#35444B" stroke-width=".8"/>
+<rect x="43" y="177" width="4" height="24" fill="#E8B576"/>
+<text x="60" y="195" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">Horrible Industries</text>
+<text x="1148" y="195" text-anchor="end" font-family="IBM Plex Mono,Consolas,monospace" font-size="16" fill="#B6C2C5">Nov 20, 2026  /  ac8c447</text>
+</g>
+<g data-repository="redraft" data-committed-at="2026-11-20T03:10:23+00:00">
+<rect x="32" y="223" width="1136" height="50" rx="4" fill="#18262E" stroke="#35444B" stroke-width=".8"/>
+<rect x="43" y="236" width="4" height="24" fill="#E8B576"/>
+<text x="60" y="254" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">REDRAFT / NFL Draft</text>
+<text x="1148" y="254" text-anchor="end" font-family="IBM Plex Mono,Consolas,monospace" font-size="16" fill="#B6C2C5">Nov 20, 2026  /  93db8a1</text>
+</g>
+<g data-repository="worldsim" data-committed-at="2026-11-20T02:12:48+00:00">
+<rect x="32" y="282" width="1136" height="50" rx="4" fill="#18262E" stroke="#35444B" stroke-width=".8"/>
+<rect x="43" y="295" width="4" height="24" fill="#E8B576"/>
+<text x="60" y="313" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">EPOCH / World Simulation</text>
+<text x="1148" y="313" text-anchor="end" font-family="IBM Plex Mono,Consolas,monospace" font-size="16" fill="#B6C2C5">Nov 20, 2026  /  7547284</text>
+</g>
 <g data-repository="nfl_weekly_simulation" data-committed-at="2026-11-05T20:30:14+00:00">
-<rect x="27" y="100" width="846" height="54" rx="8" fill="#142337"/>
-<rect x="40" y="118" width="6" height="18" rx="2" fill="#78e4d2"/>
-<text x="60" y="132" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#eef6fc">NFL / Game Simulation</text>
-<text x="848" y="131" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#bdccda">Nov 05, 2026 · 85fd35a</text>
+<rect x="32" y="341" width="1136" height="50" rx="4" fill="#18262E" stroke="#35444B" stroke-width=".8"/>
+<rect x="43" y="354" width="4" height="24" fill="#E8B576"/>
+<text x="60" y="372" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">NFL Game Model</text>
+<text x="1148" y="372" text-anchor="end" font-family="IBM Plex Mono,Consolas,monospace" font-size="16" fill="#B6C2C5">Nov 05, 2026  /  85fd35a</text>
 </g>
 <g data-repository="fantasy_football_dashboard" data-committed-at="2026-09-08T03:12:49+00:00">
-<rect x="27" y="159" width="846" height="54" rx="8" fill="#142337"/>
-<rect x="40" y="177" width="6" height="18" rx="2" fill="#78e4d2"/>
-<text x="60" y="191" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#eef6fc">RAE / Roster Analytics Engine</text>
-<text x="848" y="190" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#bdccda">Sep 08, 2026 · 359c7d0</text>
+<rect x="32" y="400" width="1136" height="50" rx="4" fill="#18262E" stroke="#35444B" stroke-width=".8"/>
+<rect x="43" y="413" width="4" height="24" fill="#E8B576"/>
+<text x="60" y="431" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">RAE / Roster Analytics</text>
+<text x="1148" y="431" text-anchor="end" font-family="IBM Plex Mono,Consolas,monospace" font-size="16" fill="#B6C2C5">Sep 08, 2026  /  359c7d0</text>
 </g>
-<g data-repository="shiny_predictive_football_app" data-committed-at="2026-05-02T04:47:53+00:00">
-<rect x="27" y="218" width="846" height="54" rx="8" fill="#142337"/>
-<rect x="40" y="236" width="6" height="18" rx="2" fill="#78e4d2"/>
-<text x="60" y="250" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#eef6fc">Gridiron DNA Lab</text>
-<text x="848" y="249" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#bdccda">May 02, 2026 · 5b22f4e</text>
-</g>
-<g data-repository="nba_daily_simulation" data-committed-at="2026-04-28T05:54:11+00:00">
-<rect x="27" y="277" width="846" height="54" rx="8" fill="#142337"/>
-<rect x="40" y="295" width="6" height="18" rx="2" fill="#78e4d2"/>
-<text x="60" y="309" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#eef6fc">NBA / Daily Simulation</text>
-<text x="848" y="308" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#bdccda">Apr 28, 2026 · 99fa2c1</text>
-</g>
-<g data-repository="gmat_quant_pwa" data-committed-at="2025-12-19T04:23:56+00:00">
-<rect x="27" y="336" width="846" height="54" rx="8" fill="#142337"/>
-<rect x="40" y="354" width="6" height="18" rx="2" fill="#78e4d2"/>
-<text x="60" y="368" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#eef6fc">GMAT Study PWA</text>
-<text x="848" y="367" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#bdccda">Dec 19, 2025 · f0b4c5c</text>
-</g>
-<text x="30" y="412" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#bdccda">Automated via GitHub Actions; dates reflect source commits, not activity on this profile.</text>
+<text x="32" y="482" font-family="IBM Plex Mono,Consolas,monospace" font-size="13" fill="#B6C2C5">PUBLIC GITHUB SOURCE / CURATED SELECTION / NO FORECAST METRICS</text>
 </svg>
