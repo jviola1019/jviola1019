@@ -1,27 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 328" width="1200" height="328" role="img" aria-labelledby="title desc">
-<title id="title">Joe Viola — Analytics, research, and data products</title>
-<desc id="desc">A typography-led banner with a geometric research signal on the right.</desc>
-<defs>
-<linearGradient id="base" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#090F1F"/><stop offset="1" stop-color="#111D32"/></linearGradient>
-<linearGradient id="signal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#40BFB4"/><stop offset="1" stop-color="#68E5D1"/></linearGradient>
-<pattern id="mesh" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0 H0 V36" stroke="#23455E" stroke-width="1" fill="none" opacity="0.38"/></pattern>
-<clipPath id="clip"><rect width="1200" height="328" rx="18"/></clipPath>
-</defs>
-<g clip-path="url(#clip)">
-<rect width="1200" height="328" fill="url(#base)"/>
-<rect x="715" width="485" height="328" fill="url(#mesh)" opacity="0.62"/>
-<path d="M0 0 H1200 M0 327 H1200" stroke="#315269" opacity="0.65"/>
-<rect x="48" y="38" width="8" height="8" rx="2" fill="#68E5D1"/>
-<text x="69" y="47" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="3.1" fill="#B8C9DA">RESEARCH / BUILD / VERIFY</text>
-<text x="48" y="146" font-family="Arial, Helvetica, sans-serif" font-size="84" font-weight="700" letter-spacing="-3.4" fill="#F7FBFF">JOE VIOLA</text>
-<rect x="48" y="173" width="53" height="4" rx="2" fill="#68E5D1"/>
-<text x="48" y="212" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#B8C9DA" font-weight="500">Analytics, simulation &amp; data products.</text>
-<rect x="48" y="251" width="382" height="40" rx="9" fill="#182B3E" stroke="#315269" stroke-width="1"/>
-<text x="66" y="277" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="1.3" fill="#F7FBFF" font-weight="700">MODEL   →   TEST   →   EXPLAIN</text>
-<g opacity="0.72"><path d="M728 120 H1151 M728 190 H1151 M728 260 H1151" stroke="#30465C" stroke-width="1" stroke-dasharray="5 10"/><path d="M780 48 V303 M870 48 V303 M960 48 V303 M1050 48 V303 M1140 48 V303" stroke="#30465C" stroke-width="1" stroke-dasharray="4 10"/></g>
-<path d="M734 206 L792 172 L842 224 L894 137 L939 188 L992 128 L1031 194 L1085 150 L1153 175" stroke="#68E5D1" opacity="0.15" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M734 206 L792 172 L842 224 L894 137 L939 188 L992 128 L1031 194 L1085 150 L1153 175" stroke="url(#signal)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<g fill="#111D32" stroke="#68E5D1" stroke-width="3"><circle cx="792" cy="172" r="5"/><circle cx="894" cy="137" r="5"/><circle cx="992" cy="128" r="6"/><circle cx="1085" cy="150" r="6"/></g>
-<path d="M708 318 L740 318 M1172 22 L1172 54" stroke="#68E5D1" stroke-width="3" opacity="0.8"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="470" viewBox="0 0 1440 470" role="img" aria-labelledby="title desc">
+<title id="title">Joe Viola — applied analytics and simulation engineering</title>
+<desc id="desc">Original editorial profile banner with a conceptual research signal and the words define, measure, test, explain. The signal is illustrative, not model performance data.</desc>
+<rect width="1440" height="470" rx="8" fill="#0D151C"/>
+<rect x="16" y="16" width="1408" height="438" rx="4" fill="none" stroke="#35444B"/>
+<rect x="44" y="42" width="7" height="7" fill="#E8B576"/>
+<text x="64" y="50" font-family="IBM Plex Mono,Consolas,monospace" font-size="17" letter-spacing="2.5" font-weight="600" fill="#A9B9C3">JV / RESEARCH &amp; PRODUCT ENGINEERING</text>
+<path d="M46 73H1394" stroke="#35444B"/>
+<text x="48" y="211" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" letter-spacing="-6" font-size="114" font-weight="700" fill="#F2F4F1">JOE VIOLA</text>
+<rect x="49" y="235" width="62" height="5" fill="#E8B576"/>
+<text x="49" y="287" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="31" font-weight="500" fill="#F2F4F1">Analytics, simulation &amp; useful software.</text>
+<text x="49" y="330" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="22" fill="#A9B9C3">I build decision tools. Then I test the assumptions.</text>
+<path d="M47 369H733" stroke="#35444B"/>
+<text x="49" y="405" font-family="IBM Plex Mono,Consolas,monospace" font-size="17" letter-spacing="1.5" fill="#E8B576">01 / DEFINE</text>
+<text x="228" y="405" font-family="IBM Plex Mono,Consolas,monospace" font-size="17" letter-spacing="1.5" fill="#A9B9C3">02 / MEASURE</text>
+<text x="424" y="405" font-family="IBM Plex Mono,Consolas,monospace" font-size="17" letter-spacing="1.5" fill="#A9B9C3">03 / TEST</text>
+<text x="583" y="405" font-family="IBM Plex Mono,Consolas,monospace" font-size="17" letter-spacing="1.5" fill="#A9B9C3">04 / EXPLAIN</text>
+<rect x="775" y="90" width="619" height="331" rx="4" fill="#15242B"/>
+<path d="M800 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M845 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M890 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M935 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M980 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M1025 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M1070 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M1115 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M1160 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M1205 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M1250 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M1295 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M1340 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M1385 44V422" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M783 55H1428" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M783 100H1428" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M783 145H1428" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M783 190H1428" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M783 235H1428" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M783 280H1428" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M783 325H1428" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M783 370H1428" stroke="#35444B" stroke-width="1" opacity=".24"/><path d="M783 415H1428" stroke="#35444B" stroke-width="1" opacity=".24"/>
+<path d="M826 290 L884 258 L944 270 L1004 211 L1075 224 L1132 170 L1200 185 L1280 125 L1375 146L1375 368L826 368Z" fill="#7FBDB2" opacity=".08"/>
+<path d="M826 290 L884 258 L944 270 L1004 211 L1075 224 L1132 170 L1200 185 L1280 125 L1375 146" stroke="#7FBDB2" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="826" cy="290" r="4" fill="#0D151C" stroke="#7FBDB2" stroke-width="2"/><circle cx="884" cy="258" r="4" fill="#0D151C" stroke="#7FBDB2" stroke-width="2"/><circle cx="944" cy="270" r="4" fill="#0D151C" stroke="#7FBDB2" stroke-width="2"/><circle cx="1004" cy="211" r="4" fill="#0D151C" stroke="#7FBDB2" stroke-width="2"/><circle cx="1075" cy="224" r="4" fill="#0D151C" stroke="#7FBDB2" stroke-width="2"/><circle cx="1132" cy="170" r="4" fill="#0D151C" stroke="#7FBDB2" stroke-width="2"/><circle cx="1200" cy="185" r="4" fill="#0D151C" stroke="#7FBDB2" stroke-width="2"/><circle cx="1280" cy="125" r="7" fill="#0D151C" stroke="#E8B576" stroke-width="2"/><circle cx="1375" cy="146" r="4" fill="#0D151C" stroke="#7FBDB2" stroke-width="2"/>
+<path d="M1280 125L1317 102H1380" fill="none" stroke="#E8B576" stroke-width="1.5"/>
+<text x="1380" y="95" text-anchor="end" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#E8B576">HYPOTHESIS</text>
+<text x="798" y="115" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" letter-spacing="1.4" fill="#A9B9C3">CONCEPTUAL SIGNAL / NOT OBSERVED DATA</text>
+<text x="803" y="396" font-family="IBM Plex Mono,Consolas,monospace" font-size="14" fill="#A9B9C3">RESEARCH → SOFTWARE → DECISIONS</text>
 </svg>
