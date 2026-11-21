@@ -74,7 +74,7 @@ A two-tab football research application for **game simulations** and **playoff s
 
 **Research boundary:** A conditional player-event study is **not** independently calibrated, unconditional player-prop forecasting. Historical inputs and simulated outcomes are deliberately labeled separately.
 
-[Repository](https://github.com/jviola1019/hypothetical_cfb) · [Model card](https://github.com/jviola1019/hypothetical_cfb/blob/main/docs/MODEL_CARD.md) · [Validation](https://github.com/jviola1019/hypothetical_cfb/blob/main/docs/VALIDATION_V08.md) · [Pages deployment](https://jviola1019.github.io/hypothetical_cfb/)
+[Repository](https://github.com/jviola1019/hypothetical_cfb) · [Model card](https://github.com/jviola1019/hypothetical_cfb/blob/main/docs/MODEL_CARD.md) · [Validation](https://github.com/jviola1019/hypothetical_cfb/blob/main/docs/VALIDATION_V08.md)
 
 ---
 

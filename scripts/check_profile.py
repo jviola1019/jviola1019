@@ -38,7 +38,7 @@ def main() -> int:
         errors.append("Unexpected project manifest owner")
     if len(body.encode("utf-8")) >= 500 * 1024:
         errors.append("README exceeds the 500 KiB limit")
-    for banned in ("<script", "<iframe", "javascript:", "prediction-market-quant", "gmat_quant_pwa"):
+    for banned in ("<script", "<iframe", "javascript:", "gmat_quant_pwa"):
         if banned in body.lower():
             errors.append(f"Unsafe, private or unavailable reference: {banned}")
     if body.count("<picture>") != body.count("</picture>"):
@@ -70,6 +70,8 @@ def main() -> int:
     if len({p["slug"] for p in projects}) != len(projects):
         errors.append("Duplicate project slug in manifest")
     for project in projects:
+        if project.get("visibility") != "public":
+            errors.append("Nonpublic or unverified repository in project manifest")
         if not re.fullmatch(r"[A-Za-z0-9_.-]+", project["slug"]):
             errors.append("Invalid repository slug in public manifest")
         url = f"https://github.com/jviola1019/{project['slug']}"

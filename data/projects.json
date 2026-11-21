@@ -9,56 +9,64 @@
       "label": "RAE / Roster Analytics",
       "category": "product",
       "featured": true,
-      "activity": true
+      "activity": true,
+      "visibility": "public"
     },
     {
       "slug": "redraft",
       "label": "REDRAFT / NFL Draft",
       "category": "simulation",
       "featured": true,
-      "activity": true
+      "activity": true,
+      "visibility": "public"
     },
     {
       "slug": "hypothetical_cfb",
       "label": "Gridiron Lab / CFB",
       "category": "modeling",
       "featured": true,
-      "activity": true
+      "activity": true,
+      "visibility": "public"
     },
     {
       "slug": "worldsim",
       "label": "EPOCH / World Simulation",
       "category": "simulation",
       "featured": true,
-      "activity": true
+      "activity": true,
+      "visibility": "public"
     },
     {
       "slug": "horrible_ceo",
       "label": "Horrible Industries",
       "category": "game",
       "featured": false,
-      "activity": true
+      "activity": true,
+      "visibility": "public"
     },
     {
       "slug": "nfl_weekly_simulation",
       "label": "NFL Game Model",
       "category": "modeling",
       "featured": false,
-      "activity": true
+      "activity": true,
+      "visibility": "public"
     },
     {
       "slug": "nba_daily_simulation",
       "label": "NBA Daily Monte Carlo",
       "category": "modeling",
       "featured": false,
-      "activity": true
+      "activity": true,
+      "visibility": "public"
     },
     {
       "slug": "shiny_predictive_football_app",
       "label": "Gridiron DNA Lab",
       "category": "visual analytics",
       "featured": false,
-      "activity": true
+      "activity": true,
+      "visibility": "public"
     }
   ]
 }

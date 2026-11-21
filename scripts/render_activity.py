@@ -32,6 +32,8 @@ def load_manifest() -> tuple[list[tuple[str, str]], int]:
     tracked = []
     seen = set()
     for project in data["projects"]:
+        if project.get("visibility") != "public":
+            raise ValueError("Only verified public repositories may enter activity")
         slug = project["slug"]
         if not re.fullmatch(r"[A-Za-z0-9_.-]+", slug) or slug in seen:
             raise ValueError("Invalid or repeated project slug")

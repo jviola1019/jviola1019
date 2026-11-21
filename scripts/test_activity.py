@@ -67,7 +67,7 @@ class ActivityTests(unittest.TestCase):
         self.assertGreaterEqual(len(tracked), limit)
         self.assertEqual(limit, 6)
         self.assertTrue(any(slug == "redraft" for _, slug in tracked))
-        self.assertFalse(any("prediction-market" in slug for _, slug in tracked))
+        self.assertFalse(any(slug.startswith("private_") for _, slug in tracked))
 
 
 if __name__ == "__main__":
