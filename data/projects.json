@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "owner": "jviola1019",
+  "activity_limit": 6,
+  "description": "Curated public project index; the activity chart selects the newest default-branch commits from entries marked activity=true. Private repositories are never included.",
+  "projects": [
+    {
+      "slug": "fantasy_football_dashboard",
+      "label": "RAE / Roster Analytics",
+      "category": "product",
+      "featured": true,
+      "activity": true
+    },
+    {
+      "slug": "redraft",
+      "label": "REDRAFT / NFL Draft",
+      "category": "simulation",
+      "featured": true,
+      "activity": true
+    },
+    {
+      "slug": "hypothetical_cfb",
+      "label": "Gridiron Lab / CFB",
+      "category": "modeling",
+      "featured": true,
+      "activity": true
+    },
+    {
+      "slug": "worldsim",
+      "label": "EPOCH / World Simulation",
+      "category": "simulation",
+      "featured": true,
+      "activity": true
+    },
+    {
+      "slug": "horrible_ceo",
+      "label": "Horrible Industries",
+      "category": "game",
+      "featured": false,
+      "activity": true
+    },
+    {
+      "slug": "nfl_weekly_simulation",
+      "label": "NFL Game Model",
+      "category": "modeling",
+      "featured": false,
+      "activity": true
+    },
+    {
+      "slug": "nba_daily_simulation",
+      "label": "NBA Daily Monte Carlo",
+      "category": "modeling",
+      "featured": false,
+      "activity": true
+    },
+    {
+      "slug": "shiny_predictive_football_app",
+      "label": "Gridiron DNA Lab",
+      "category": "visual analytics",
+      "featured": false,
+      "activity": true
+    }
+  ]
+}
