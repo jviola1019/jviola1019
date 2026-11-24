@@ -6,29 +6,29 @@
 <rect x="32" y="39" width="7" height="7" fill="#E8B576"/>
 <text x="50" y="49" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" letter-spacing="1.1" font-weight="600" fill="#F2F4F1">RECENT SOURCE ACTIVITY</text>
 <text x="32" y="76" font-family="IBM Plex Mono,Consolas,monospace" font-size="11" fill="#B6C2C5">LATEST DEFAULT-BRANCH COMMITS / NEWEST FIRST</text>
-<g data-repository="hypothetical_cfb" data-committed-at="2026-11-23T22:40:24+00:00">
+<g data-repository="worldsim" data-committed-at="2026-11-24T22:59:05+00:00">
 <rect x="32" y="109" width="416" height="81" rx="4" fill="#18262E" stroke="#35444B" stroke-width=".8"/>
 <rect x="43" y="122" width="4" height="55" fill="#E8B576"/>
-<text x="60" y="140" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">Gridiron Lab / CFB</text>
-<text x="60" y="170" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#B6C2C5">Nov 23, 2026  /  4bbafc4</text>
+<text x="60" y="140" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">EPOCH / World Simulation</text>
+<text x="60" y="170" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#B6C2C5">Nov 24, 2026  /  0207ec0</text>
 </g>
-<g data-repository="horrible_ceo" data-committed-at="2026-11-20T10:02:43+00:00">
+<g data-repository="hypothetical_cfb" data-committed-at="2026-11-24T17:05:27+00:00">
 <rect x="32" y="200" width="416" height="81" rx="4" fill="#18262E" stroke="#35444B" stroke-width=".8"/>
 <rect x="43" y="213" width="4" height="55" fill="#E8B576"/>
-<text x="60" y="231" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">Horrible Industries</text>
-<text x="60" y="261" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#B6C2C5">Nov 20, 2026  /  ac8c447</text>
+<text x="60" y="231" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">Gridiron Lab / CFB</text>
+<text x="60" y="261" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#B6C2C5">Nov 24, 2026  /  32dd74c</text>
 </g>
-<g data-repository="redraft" data-committed-at="2026-11-20T03:10:23+00:00">
+<g data-repository="horrible_ceo" data-committed-at="2026-11-20T10:02:43+00:00">
 <rect x="32" y="291" width="416" height="81" rx="4" fill="#18262E" stroke="#35444B" stroke-width=".8"/>
 <rect x="43" y="304" width="4" height="55" fill="#E8B576"/>
-<text x="60" y="322" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">REDRAFT / NFL Draft</text>
-<text x="60" y="352" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#B6C2C5">Nov 20, 2026  /  93db8a1</text>
+<text x="60" y="322" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">Horrible Industries</text>
+<text x="60" y="352" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#B6C2C5">Nov 20, 2026  /  ac8c447</text>
 </g>
-<g data-repository="worldsim" data-committed-at="2026-11-20T02:12:48+00:00">
+<g data-repository="redraft" data-committed-at="2026-11-20T03:10:23+00:00">
 <rect x="32" y="382" width="416" height="81" rx="4" fill="#18262E" stroke="#35444B" stroke-width=".8"/>
 <rect x="43" y="395" width="4" height="55" fill="#E8B576"/>
-<text x="60" y="413" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">EPOCH / World Simulation</text>
-<text x="60" y="443" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#B6C2C5">Nov 20, 2026  /  7547284</text>
+<text x="60" y="413" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#F2F4F1">REDRAFT / NFL Draft</text>
+<text x="60" y="443" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#B6C2C5">Nov 20, 2026  /  93db8a1</text>
 </g>
 <g data-repository="nfl_weekly_simulation" data-committed-at="2026-11-05T20:30:14+00:00">
 <rect x="32" y="473" width="416" height="81" rx="4" fill="#18262E" stroke="#35444B" stroke-width=".8"/>
