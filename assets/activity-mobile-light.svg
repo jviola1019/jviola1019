@@ -6,17 +6,17 @@
 <rect x="32" y="39" width="7" height="7" fill="#865D29"/>
 <text x="50" y="49" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" letter-spacing="1.1" font-weight="600" fill="#182831">RECENT SOURCE ACTIVITY</text>
 <text x="32" y="76" font-family="IBM Plex Mono,Consolas,monospace" font-size="11" fill="#52646B">LATEST DEFAULT-BRANCH COMMITS / NEWEST FIRST</text>
-<g data-repository="worldsim" data-committed-at="2026-11-26T21:38:53+00:00">
+<g data-repository="hypothetical_cfb" data-committed-at="2026-11-27T21:23:41+00:00">
 <rect x="32" y="109" width="416" height="81" rx="4" fill="#FFFFFF" stroke="#CFD7D6" stroke-width=".8"/>
 <rect x="43" y="122" width="4" height="55" fill="#865D29"/>
-<text x="60" y="140" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#182831">EPOCH / World Simulation</text>
-<text x="60" y="170" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#52646B">Nov 26, 2026  /  b6beca0</text>
+<text x="60" y="140" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#182831">Gridiron Lab / CFB</text>
+<text x="60" y="170" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#52646B">Nov 27, 2026  /  ec131fe</text>
 </g>
-<g data-repository="hypothetical_cfb" data-committed-at="2026-11-24T17:05:27+00:00">
+<g data-repository="worldsim" data-committed-at="2026-11-27T02:03:53+00:00">
 <rect x="32" y="200" width="416" height="81" rx="4" fill="#FFFFFF" stroke="#CFD7D6" stroke-width=".8"/>
 <rect x="43" y="213" width="4" height="55" fill="#865D29"/>
-<text x="60" y="231" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#182831">Gridiron Lab / CFB</text>
-<text x="60" y="261" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#52646B">Nov 24, 2026  /  32dd74c</text>
+<text x="60" y="231" font-family="IBM Plex Sans,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600" fill="#182831">EPOCH / World Simulation</text>
+<text x="60" y="261" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#52646B">Nov 27, 2026  /  7489fa6</text>
 </g>
 <g data-repository="horrible_ceo" data-committed-at="2026-11-20T10:02:43+00:00">
 <rect x="32" y="291" width="416" height="81" rx="4" fill="#FFFFFF" stroke="#CFD7D6" stroke-width=".8"/>
